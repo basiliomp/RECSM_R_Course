@@ -44,13 +44,13 @@ a != b #answer
 help.start()
 
 # More targeted help
-?sqrt			# get specific help for a function
-??sqrt			# looking for help beyond functions
+?sqrt			# get specific help for a function. help() if you prefer.
+??sqrt			# looking for help beyond functions. help.search() also.
 
 apropos("sq")		# it's on the tip of my tongue...
 
 rm(a)			# remove a single object from the environment
-rm(list=ls())		# remove ... remember?
+rm(list = ls())		# remove ... remember?
 
 # -------------------------
 # Vectors and matrices in R
@@ -71,10 +71,10 @@ length(a) #answer
 a <- 1:5		#answer
 
 #Then, run the following code and try to understand each function at place.
-a>2			# some TRUE, some FALSE
-any(a>2)		# are any elements TRUE?
-all(a>2)		# are all elements TRUE?
-which(a>2)	# which indices are TRUE?
+a > 2			# some TRUE, some FALSE
+any(a > 2)		# are any elements TRUE?
+all(a > 2)		# are all elements TRUE?
+which(a > 2)	# which indices are TRUE?
 
 # From what you saw, what do you think would be the result of `any(a>5)`?
 FALSE #answer
@@ -82,7 +82,7 @@ FALSE #answer
 # Create a matrix `m` with 25 values, dim(5, 5) with the `matrix()` function.
 # Hint: In RStudio, use tab within the brackets of a function to see 
 # which arguments it is waiting for.
-m <- matrix(data=1:25, nrow=5, ncol=5) #answer
+m <- matrix(data = 1:25, nrow = 5, ncol = 5) #answer
 
 # Select an element (specifying two dimensions)
 m[1,2] #answer
@@ -140,8 +140,8 @@ a + 1:6		# problem: need same length
 # Same for many other basic transformations
 log(a)				# log function
 exp(b)				# exponential function
-sqrt(a+b)				# note that we can nest statements!
-log((sqrt(a+b)+a)*b)	# more nesting
+sqrt(a + b)				# note that we can nest statements!
+log((sqrt(a + b) + a) * b)	# more nesting
 
 a <- rbind(1:5,2:6)		# same principles apply to matrices
 b <- rbind(3:7,4:8)
@@ -161,7 +161,9 @@ a != b	# corresponding values not equivalent?
 # named "Income" (numeric), foreign (logical) and name (character).
 # The data frame must have dimensions 5, 3.
 # (Hint:don't forget the colon operator and concatenate.)
-d <- data.frame(income=1:5,foreign=c(T,T,T,T,F),name=LETTERS[1:5]) #answer
+d <- data.frame(income = 1:5,
+                foreign = c(T,T,T,T,F),
+                name = LETTERS[1:5]) #answer
 
 #Check that your new object is indeed a data.frame. What is its class?
 class(d) #answer
@@ -171,7 +173,10 @@ d$name #answer
 
 # As you can see, this vector contains a factor variable.
 # If you want to do without factors, use this option:
-d <- data.frame(income=1:5,foreign=c(T,T,T,T,F),name=LETTERS[1:5],stringsAsFactors=FALSE)
+d <- data.frame(income = 1:5,
+                foreign = c(T,T,T,T,F),
+                name = LETTERS[1:5],
+                stringsAsFactors = FALSE)
 
 #Print the `name` vector once again and see the difference.
 d$name #answer
@@ -271,25 +276,44 @@ USA[USA$UrbanPop > mean(USA$UrbanPop), ] #answer
 
 # R's graphics workhorse is the "plot" command. 
 # Use plot() with two arguments: Murder & UrbanPop from the USA data frame.
-plot(x=USA$Murder,y=USA$UrbanPop) #answer
+plot(x = USA$Murder,y = USA$UrbanPop) #answer
 
 # Adding plot title and clean up axis labels
 # Search for the two dimensions of the plot and name each axis accordingly.
 # Go back to the help documentation of ?plot to get the instructions!
-plot(x=USA$Murder,y=USA$Assault,xlab="Murder",ylab="Assault",main="USArrests") #answer
+plot(x = USA$Murder,
+     y = USA$Assault,
+     xlab = "Murder",
+     ylab = "Assault",
+     main = "USArrests") #answer
 
 # You can also add text to a plot:
 # Step 1: set up a "blank" plot window
-plot(x=USA$Murder,y=USA$Assault,xlab="Murder",ylab="Assault", main="USArrests",type="n")
+plot(x = USA$Murder,
+     y = USA$Assault,
+     xlab = "Murder",
+     ylab = "Assault",
+     main = "USArrests",
+     type = "n")
+
 # Step 2: add in text
-text(x=USA$Murder,y=USA$Assault,labels=rownames(USA))
+text(x = USA$Murder,
+     y = USA$Assault,
+     labels = rownames(USA))
 
 # Try to do the same using the Urban population values of each state.
 # This will allow us to compare 3 dimensions at the same time in a rudimentary way.
 #Step 1
-plot(x=USA$Murder,y=USA$Assault,xlab="Murder",ylab="Assault", main="USArrests",type="n") #answer
+plot(x = USA$Murder,
+     y = USA$Assault,
+     xlab = "Murder",
+     ylab = "Assault",
+     main = "USArrests",
+     type = "n") #answer
 #Step 2
-text(x=USA$Murder,y=USA$Assault,labels=USA$UrbanPop) #answer
+text(x = USA$Murder,
+     y = USA$Assault,
+     labels = USA$UrbanPop) #answer
 
 # Histograms are helpful to see the distribution and range of a single variable.
 hist(USA$Murder)
@@ -305,15 +329,15 @@ hist(USA$UrbanPop) #answer
 ## ------------------------------------------------------------------------
 I <- 100
 
-d <- data.frame(i=1:I)
+d <- data.frame(i = 1:I)
 
 d$X <- rnorm(n = I, mean = 4, sd = 4)
 
 d$alpha <- 2; d$beta <- 3; sigma <- 5
 
-d$y <- d$alpha + d$beta * d$X + rnorm(I, mean=0, sd=sigma)
+d$y <- d$alpha + d$beta * d$X + rnorm(I, mean = 0, sd = sigma)
 
-head(d, n=12)
+head(d, n = 12)
 
 # What kind of objects are `I` and `d`, just created?
 class(I) ; class(d) #answer

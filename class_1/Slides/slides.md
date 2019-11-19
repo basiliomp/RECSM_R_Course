@@ -244,7 +244,7 @@ Can we do operations with strings?
 ```
 
 ```
-Error in "Paul" + "Maria": non-numeric argument to binary operator
+Error in "Paul" + "Maria": argumento no-numérico para operador binario
 ```
 
 Makes sense.. we can't add any letters.
@@ -260,8 +260,8 @@ c(age, participants)
 ```
 
 ```
- [1] "32"     "34"     "18"     "22"     "65"     "Paul"   "Maria" 
- [8] "Andres" "Robert" "Alicia"
+ [1] "32"     "34"     "18"     "22"     "65"     "Paul"   "Maria"  "Andres"
+ [9] "Robert" "Alicia"
 ```
 
 
@@ -400,6 +400,30 @@ c(1, FALSE)
 
 Introduction to R objects
 ========================================================
+
+We used some logical evaluations on those previous slides (*Is age greater than 20?*). But what is the list of operators available?
+
+Logical evaluations (generally) work like arithmetic ones, that is, the evaluation is executed element-wise:
+
+
+```r
+age > 0	# Is each value greater than zero?
+age == 22	# Are corresponding values equivalent?
+age != 22	# Are corresponding values not equivalent?
+```
+
+However, other logical evaluations take the whole object as the element to evaluate:
+
+```r
+"z" %in% letters # Is "z" present in the list letters?
+```
+
+```
+[1] TRUE
+```
+
+Introduction to R objects
+========================================================
  
 What do we know so far?
 
@@ -507,8 +531,8 @@ ls()
 ```
 
 ```
-[1] "age"          "elm"          "elm_factor"   "gender"      
-[5] "lgl"          "participants"
+[1] "age"          "elm"          "elm_factor"   "gender"       "lgl"         
+[6] "participants"
 ```
 
 Introduction to R objects
@@ -597,7 +621,7 @@ our_matrix
 Introduction to R objects
 ========================================================
 
-Finally, we're missing the secret ingridient the differentiates both matrices and data frames.
+Finally, we're missing the secret ingredient the differentiates both matrices and data frames.
 
 # Lists
 

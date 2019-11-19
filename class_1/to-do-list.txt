@@ -1,9 +1,6 @@
-﻿To-do list:
+To-do list:
 
 - Don’t delete this: update dates of the first slide
 
 -Packages
 -How to get help?
-
-Q for Jorge: What do you mean on line 451 of the presentation? Matrices have the same number of dimensions than df's?
-I mean that hey have rows and columns as well: 2-dimensional matrices

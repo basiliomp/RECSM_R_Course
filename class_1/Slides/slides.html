@@ -1037,7 +1037,7 @@ is.numeric(10 / 2)
 <pre><code class="r">&quot;Paul&quot; + &quot;Maria&quot;
 </code></pre>
 
-<pre><code>Error in &quot;Paul&quot; + &quot;Maria&quot;: non-numeric argument to binary operator
+<pre><code>Error in &quot;Paul&quot; + &quot;Maria&quot;: argumento no-numérico para operador binario
 </code></pre>
 
 <p>Makes sense.. we can&#39;t add any letters.</p>
@@ -1053,8 +1053,8 @@ is.numeric(10 / 2)
 <pre><code class="r">c(age, participants)
 </code></pre>
 
-<pre><code> [1] &quot;32&quot;     &quot;34&quot;     &quot;18&quot;     &quot;22&quot;     &quot;65&quot;     &quot;Paul&quot;   &quot;Maria&quot; 
- [8] &quot;Andres&quot; &quot;Robert&quot; &quot;Alicia&quot;
+<pre><code> [1] &quot;32&quot;     &quot;34&quot;     &quot;18&quot;     &quot;22&quot;     &quot;65&quot;     &quot;Paul&quot;   &quot;Maria&quot;  &quot;Andres&quot;
+ [9] &quot;Robert&quot; &quot;Alicia&quot;
 </code></pre>
 
 <ul>
@@ -1196,6 +1196,29 @@ c(1, FALSE)
 <section data-transition="linear" data-transition-speed="default">
 <h3>Introduction to R objects</h3>
 <div class="slideContent" >
+<p>We used some logical evaluations on those previous slides (<em>Is age greater than 20?</em>). But what is the list of operators available?</p>
+
+<p>Logical evaluations (generally) work like arithmetic ones, that is, the evaluation is executed element-wise:</p>
+
+<pre><code class="r">age &gt; 0 # Is each value greater than zero?
+age == 22   # Are corresponding values equivalent?
+age != 22   # Are corresponding values not equivalent?
+</code></pre>
+
+<p>However, other logical evaluations take the whole object as the element to evaluate:</p>
+
+<pre><code class="r">&quot;z&quot; %in% letters # Is &quot;z&quot; present in the list letters?
+</code></pre>
+
+<pre><code>[1] TRUE
+</code></pre>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Introduction to R objects</h3>
+<div class="slideContent" >
 <p>What do we know so far?</p>
 
 <ul>
@@ -1309,8 +1332,8 @@ Levels: Bad &lt; Medium &lt; Good
 <pre><code class="r">ls()
 </code></pre>
 
-<pre><code>[1] &quot;age&quot;          &quot;elm&quot;          &quot;elm_factor&quot;   &quot;gender&quot;      
-[5] &quot;lgl&quot;          &quot;participants&quot;
+<pre><code>[1] &quot;age&quot;          &quot;elm&quot;          &quot;elm_factor&quot;   &quot;gender&quot;       &quot;lgl&quot;         
+[6] &quot;participants&quot;
 </code></pre>
 
 </div>
@@ -1402,7 +1425,7 @@ our_matrix
 <section data-transition="linear" data-transition-speed="default">
 <h3>Introduction to R objects</h3>
 <div class="slideContent" >
-<p>Finally, we&#39;re missing the secret ingridient the differentiates both matrices and data frames.</p>
+<p>Finally, we&#39;re missing the secret ingredient the differentiates both matrices and data frames.</p>
 
 <h1>Lists</h1>
 

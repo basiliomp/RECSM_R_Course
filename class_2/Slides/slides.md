@@ -123,7 +123,7 @@ Subsetting rules are the same for all types of vectors.
 Exceptions are:
 
 * matrices
-* data fraes
+* data frames
 * lists
 
 Let's go through each one...
@@ -187,7 +187,7 @@ A matrix can be thought of as two things:
 Subsetting in R
 ========================================================
 
-Now that you know.. what are the results of:
+Now that you know... What are the results of:
 
 ```r
 x_matrix[1:5, 2]
@@ -587,7 +587,7 @@ sd
 function (x, na.rm = FALSE) 
 sqrt(var(if (is.vector(x) || is.factor(x)) x else as.double(x), 
     na.rm = na.rm))
-<bytecode: 0x563a24b721c0>
+<bytecode: 0x0000000013de4e78>
 <environment: namespace:stats>
 ```
 

@@ -44,13 +44,13 @@
 help.start()
 
 # More targeted help
-?sqrt			# get specific help for a function
-??sqrt			# looking for help beyond functions
+?sqrt			# get specific help for a function. help() if you prefer.
+??sqrt			# looking for help beyond functions. help.search() also.
 
 apropos("sq")		# it's on the tip of my tongue...
 
 rm(a)			# remove a single object from the environment
-rm(list=ls())		# remove ... remember?
+rm(list = ls())		# remove ... remember?
 
 # -------------------------
 # Vectors and matrices in R
@@ -71,10 +71,10 @@ rm(list=ls())		# remove ... remember?
 
 
 #Then, run the following code and try to understand each function at place.
-a>2			# some TRUE, some FALSE
-any(a>2)		# are any elements TRUE?
-all(a>2)		# are all elements TRUE?
-which(a>2)	# which indices are TRUE?
+a > 2			# some TRUE, some FALSE
+any(a > 2)		# are any elements TRUE?
+all(a > 2)		# are all elements TRUE?
+which(a > 2)	# which indices are TRUE?
 
 # From what you saw, what do you think would be the result of `any(a>5)`?
 
@@ -135,8 +135,8 @@ a + 1:6		# problem: need same length
 # Same for many other basic transformations
 log(a)				# log function
 exp(b)				# exponential function
-sqrt(a+b)				# note that we can nest statements!
-log((sqrt(a+b)+a)*b)	# more nesting
+sqrt(a + b)				# note that we can nest statements!
+log((sqrt(a + b) + a) * b)	# more nesting
 
 a <- rbind(1:5,2:6)		# same principles apply to matrices
 b <- rbind(3:7,4:8)
@@ -166,7 +166,10 @@ a != b	# corresponding values not equivalent?
 
 # As you can see, this vector contains a factor variable.
 # If you want to do without factors, use this option:
-d <- data.frame(income=1:5,foreign=c(T,T,T,T,F),name=LETTERS[1:5],stringsAsFactors=FALSE)
+d <- data.frame(income = 1:5,
+                foreign = c(T,T,T,T,F),
+                name = LETTERS[1:5],
+                stringsAsFactors = FALSE)
 
 #Print the `name` vector once again and see the difference.
 
@@ -272,9 +275,17 @@ USArrests			# view the object
 
 # You can also add text to a plot:
 # Step 1: set up a "blank" plot window
-plot(x=USA$Murder,y=USA$Assault,xlab="Murder",ylab="Assault", main="USArrests",type="n")
+plot(x = USA$Murder,
+     y = USA$Assault,
+     xlab = "Murder",
+     ylab = "Assault",
+     main = "USArrests",
+     type = "n")
+
 # Step 2: add in text
-text(x=USA$Murder,y=USA$Assault,labels=rownames(USA))
+text(x = USA$Murder,
+     y = USA$Assault,
+     labels = rownames(USA))
 
 # Try to do the same using the Urban population values of each state.
 # This will allow us to compare 3 dimensions at the same time in a rudimentary way.
@@ -297,15 +308,15 @@ hist(USA$Murder)
 ## ------------------------------------------------------------------------
 I <- 100
 
-d <- data.frame(i=1:I)
+d <- data.frame(i = 1:I)
 
 d$X <- rnorm(n = I, mean = 4, sd = 4)
 
 d$alpha <- 2; d$beta <- 3; sigma <- 5
 
-d$y <- d$alpha + d$beta * d$X + rnorm(I, mean=0, sd=sigma)
+d$y <- d$alpha + d$beta * d$X + rnorm(I, mean = 0, sd = sigma)
   
-head(d, n=12)
+head(d, n = 12)
 
 # What kind of objects are `I` and `d`, just created?
 
